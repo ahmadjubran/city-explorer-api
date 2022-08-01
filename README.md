@@ -51,4 +51,4 @@ Start time: **09:00 PM**
 
 Finish time: **I didn't finish**
 
-Actual time needed to complete: **two and a half hours**
+Actual time needed to complete:
