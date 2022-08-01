@@ -47,20 +47,8 @@ Name of feature: **Locations**
 
 Estimate of time needed to complete: **1 hour**
 
-Start time: **07:00 PM**
+Start time: **09:00 PM**
 
-Finish time: **09:30 PM**
+Finish time: **I didn't finish**
 
 Actual time needed to complete: **two and a half hours**
-
-## feature 3
-
-Name of feature: **Map**
-
-Estimate of time needed to complete: **1 hour**
-
-Start time: **09:30 PM**
-
-Finish time: **10:00 PM**
-
-Actual time needed to complete: **30 minutes**
