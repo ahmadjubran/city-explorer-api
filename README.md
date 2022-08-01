@@ -27,7 +27,7 @@
 
 ## Map
 
-![Map](./src/image/ahmad_and_fawzi_lab06.png)
+![Map](./unknown.png)
 
 ## feature 1
 
