@@ -1,35 +1,40 @@
 "use strict";
 
-const express = require("express");
 require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3001;
-const weatherData = require("./data/weather.json");
-
-var cors = require("cors");
 app.use(cors());
 
+const weatherData = require("./data/weather.json");
+
 app.get("/weather", (req, res) => {
-  const { lat, lon, searchQuery } = req.query;
+  let searchQuery = req.query.searchQuery;
+
   const city = weatherData.find(
-    (city) =>
-      city.data.lat === lat &&
-      city.data.lon === lon &&
-      city.data.city_name === searchQuery
+    (city) => city.city_name.toLowerCase() === searchQuery.toLowerCase()
   );
-  class Forecast {
-    constructor(date, description) {
-      this.date = date;
-      this.description = description;
-    }
+
+  try {
+    const weatherArr = city.data.map((day) => new Forecast(day));
+    res.status(200).send(weatherArr);
+  } catch (error) {
+    res.status(500).send("Something went wrong");
   }
-  const forecasts = city.data.map((day) => {
-    return new Forecast(day.valid_date, day.weather.description);
-  });
-  res.send(forecasts);
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.get("*", (req, res) => {
+  res.status(404).send("Page not found");
+});
+class Forecast {
+  constructor(object) {
+    this.date = object.valid_date;
+    this.description = object.weather.description;
+  }
+}
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });

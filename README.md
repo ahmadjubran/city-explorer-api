@@ -5,25 +5,31 @@
 
 ## Overview
 
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+Create a REST API for the city explorer app.
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+    1. Clone the repository
+    2. Install dependencies
+    3. Run the server
+    4. Open the browser and navigate to http://localhost:3004
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Create a REST API for the city explorer app.
+express.js is used to create the server.
+cors is used to allow cross-origin requests.
+dotenv is used to load environment variables.
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+02-08-20022 4:59pm - The API is now running on port 3004.
 
 ## Credit and Collaborations
 
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+This project was created by Ahmad Jubran.
+
+[Fawzi Shiyyab](https://github.com/fawzi-shiyyab19) helped me with the map.
 
 ## Map
 
@@ -43,24 +49,24 @@ Actual time needed to complete: **20 minutes**
 
 ## feature 2
 
-Name of feature: **Locations**
+Name of feature: **Weather (placeholder)**
 
-Estimate of time needed to complete: **1 hour**
+Estimate of time needed to complete: **2 hour**
 
-Start time: **07:00 PM**
+Start time: **09:00 PM**
 
-Finish time: **09:30 PM**
+Finish time: **04:00 PM**
 
-Actual time needed to complete: **two and a half hours**
+Actual time needed to complete: **4 hour**
 
 ## feature 3
 
-Name of feature: **Map**
+Name of feature: **Map (placeholder)**
 
 Estimate of time needed to complete: **1 hour**
 
-Start time: **09:30 PM**
+Start time: **04:00 PM**
 
-Finish time: **10:00 PM**
+Finish time: **05:00 PM**
 
-Actual time needed to complete: **30 minutes**
+Actual time needed to complete: **1 hour**
