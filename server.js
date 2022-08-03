@@ -27,15 +27,12 @@ async function handleWeather(req, res) {
 async function handleMovies(req, res) {
   let { city } = req.query;
 
-  const url = `${process.env.MOVIE_API}?api_key=${process.env.MOVIE_API_KEY}`;
+  const url = `${process.env.MOVIE_API}?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
 
   const movieData = await axios.get(url);
 
   try {
-    const filteredMovies = movieData.data.results.filter((movie) => {
-      return movie.title.toLowerCase().includes(city.toLowerCase());
-    });
-    const movielist = filteredMovies.map((movie) => new Movie(movie));
+    const movielist = movieData.data.results.map((movie) => new Movie(movie));
     res.status(200).send(movielist);
   } catch (error) {
     res.status(500).send("Something went wrong");
