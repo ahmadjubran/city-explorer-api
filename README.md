@@ -1,6 +1,6 @@
 # city-explorer-api
 
-**Author**: Ahmad
+**Author**: Ahmad Jubran
 **Version**: 1.0.0
 
 ## Overview
@@ -23,7 +23,7 @@ dotenv is used to load environment variables.
 
 ## Change Log
 
-02-08-20022 4:59pm - The API is now running on port 3004.
+    ...
 
 ## Credit and Collaborations
 
@@ -35,7 +35,9 @@ This project was created by Ahmad Jubran.
 
 ![Map](./unknown.png)
 
-## feature 1
+## LAB: CLASS07 TASKS
+
+### feature 1
 
 Name of feature: **Set up your React repository & API keys**
 
@@ -47,7 +49,7 @@ Finish time: **09:00 PM**
 
 Actual time needed to complete: **20 minutes**
 
-## feature 2
+### feature 2
 
 Name of feature: **Weather (placeholder)**
 
@@ -59,7 +61,7 @@ Finish time: **04:00 PM**
 
 Actual time needed to complete: **4 hour**
 
-## feature 3
+### feature 3
 
 Name of feature: **Map (placeholder)**
 
@@ -70,3 +72,55 @@ Start time: **04:00 PM**
 Finish time: **05:00 PM**
 
 Actual time needed to complete: **1 hour**
+
+## LAB: CLASS08 TASKS
+
+### feature 1
+
+Name of feature: **Weather (live)**
+
+Estimate of time needed to complete: **2 hour**
+
+Start time: **01:00 AM**
+
+Finish time: **02:00 AM**
+
+Actual time needed to complete: **1 hour**
+
+### feature 2
+
+Name of feature: **Movies**
+
+Estimate of time needed to complete: **2 hour**
+
+Start time: **02:00 AM**
+
+Finish time: **01:00 PM**
+
+Actual time needed to complete: **3 hour**
+
+### feature 3
+
+Name of feature: **Publish**
+
+Estimate of time needed to complete: **30 minutes**
+
+Start time: **01:30 PM**
+
+Finish time: **02:00 PM**
+
+Actual time needed to complete: **30 minutes**
+
+## LAB: CLASS09 TASKS
+
+### feature 1
+
+Name of feature: **Refactor**
+
+Estimate of time needed to complete: **30 minutes**
+
+Start time: **02:15 PM**
+
+Finish time: **02:30 AM**
+
+Actual time needed to complete: **15 minutes**
