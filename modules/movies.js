@@ -1,17 +1,24 @@
 const axios = require("axios");
 
+const moviesCache = {};
+
 async function handleMovies(req, res) {
-  let { city } = req.query;
+  const { city } = req.query;
 
-  const url = `${process.env.MOVIE_API}?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
+  if (moviesCache[city] !== undefined) {
+    res.status(200).send(moviesCache[city]);
+  } else {
+    const url = `${process.env.MOVIE_API}?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
 
-  const movieData = await axios.get(url);
+    const movieData = await axios.get(url);
 
-  try {
-    const movielist = movieData.data.results.map((movie) => new Movie(movie));
-    res.status(200).send(movielist);
-  } catch (error) {
-    res.status(500).send("Something went wrong");
+    try {
+      const movielist = movieData.data.results.map((movie) => new Movie(movie));
+      moviesCache[city] = movielist;
+      res.status(200).send(movielist);
+    } catch (error) {
+      res.status(500).send("Something went wrong");
+    }
   }
 }
 

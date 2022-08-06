@@ -1,15 +1,29 @@
 const axios = require("axios");
 
-async function handleWeather(req, res) {
-  let { lat, lon } = req.query;
-  const url = `${process.env.WEATHER_API}?key=${process.env.WEATHER_API_KEY}&lon=${lat}&lat=${lon}`;
-  const weatherData = await axios.get(url);
+const weatherCache = {};
 
-  try {
-    const weatherDay = weatherData.data.data.map((day) => new Weather(day));
-    res.status(200).send(weatherDay);
-  } catch (error) {
-    res.status(500).send("Something went wrong");
+async function handleWeather(req, res) {
+  const { searchQuery, lat, lon } = req.query;
+
+  let todayDate = new Date().toISOString().slice(0, 10);
+  console.log(todayDate);
+
+  if (
+    weatherCache[searchQuery] !== undefined &&
+    weatherCache[searchQuery][0].date === todayDate
+  ) {
+    res.status(200).send(weatherCache[searchQuery]);
+  } else {
+    const url = `${process.env.WEATHER_API}?key=${process.env.WEATHER_API_KEY}&lon=${lat}&lat=${lon}`;
+    const weatherData = await axios.get(url);
+
+    try {
+      const cityData = weatherData.data.data.map((day) => new Weather(day));
+      weatherCache[searchQuery] = cityData;
+      res.status(200).send(cityData);
+    } catch (error) {
+      res.status(500).send("Something went wrong");
+    }
   }
 }
 
