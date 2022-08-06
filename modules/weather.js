@@ -6,11 +6,10 @@ async function handleWeather(req, res) {
   const { searchQuery, lat, lon } = req.query;
 
   let todayDate = new Date().toISOString().slice(0, 10);
-  console.log(todayDate);
 
   if (
     weatherCache[searchQuery] !== undefined &&
-    weatherCache[searchQuery][0].date === todayDate
+    weatherCache[searchQuery].date === todayDate
   ) {
     res.status(200).send(weatherCache[searchQuery]);
   } else {
@@ -20,10 +19,13 @@ async function handleWeather(req, res) {
     try {
       const cityData = weatherData.data.data.map((day) => new Weather(day));
       weatherCache[searchQuery] = cityData;
+      weatherCache[searchQuery].date = new Date().toISOString().slice(0, 10);
+
       res.status(200).send(cityData);
     } catch (error) {
       res.status(500).send("Something went wrong");
     }
+    console.log(weatherCache[searchQuery]);
   }
 }
 
