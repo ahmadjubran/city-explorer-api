@@ -12,9 +12,6 @@
   },
   "author": "Ahmad Jubran",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ahmadjubran/city-explorer-api/issues"
-  },
   "homepage": "https://github.com/ahmadjubran/city-explorer-api#readme",
   "dependencies": {
     "axios": "^0.27.2",
